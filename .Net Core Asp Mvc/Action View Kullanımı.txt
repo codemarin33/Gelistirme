@@ -1,0 +1,21 @@
+       // Action Result
+	   public IActionResult Index()
+        {
+            return View();
+        }
+		
+		
+		//String ve integer değerler de alabiliyor
+		
+		//integer 
+		public int Index3()
+        {
+            return 24;
+        }
+		
+		
+	    //string 
+		public string Index4()
+        {
+            return "Burası string değer";
+        }
