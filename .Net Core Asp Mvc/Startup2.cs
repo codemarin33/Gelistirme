@@ -29,7 +29,8 @@ namespace ilk_ders2
             {
                 app.UseDeveloperExceptionPage();
             }
-
+			
+            app.UseStaticFiles(); //css js dosyalarının kullanılması için gerekli
             app.UseRouting();
 
             app.UseAuthentication();
@@ -38,7 +39,7 @@ namespace ilk_ders2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}");
+                    pattern: "{controller=depart}/{action=Index}/{id?}");
               
             });
 

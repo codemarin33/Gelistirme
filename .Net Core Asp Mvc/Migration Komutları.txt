@@ -1,0 +1,35 @@
+View->Other Windows->Package Manager Console  konsol ekranı açılabilir.
+
+add-migration migrationadı --> migration oluşturur 
+update-database --> migrationları dbye yansıtır
+
+
+Model Kısmında Gerekli Olabilecek Bazı Komutlar
+
+Context.cs
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("server=DESKTOP-QL0UU6E\\SQLEXPRESS;database=corepersonel;integrated security=true;");
+        }
+        public DbSet<departmanlar> departmanlars { get; set; }
+        public DbSet<personel> personels { get; set; }
+
+
+Departmanlar.cs
+
+        [Key]
+        public int Id { get; set; }
+        public string DepartmanAd { get; set; }
+        public List<personel> personels { get; set; }
+
+Personel.cs
+
+        [Key]
+        public int PerId { get; set; }
+        public string ad { get; set; }
+        public string soyad { get; set; }
+        public string sehir { get; set; }
+
+        public departmanlar depart { get; set; }
+ 
