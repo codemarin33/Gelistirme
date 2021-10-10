@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="background-color:#00ff90">Projemizin işlk kontrolere bağlı layout alanıdır.</div>
+    <div style="background-color:#ff6a00">
+        @DateTime.Now.ToShortDateString()
+    </div>
+    <br /> 
+
+    <marquee><h1>1-10 saydırma & dizideki şehirleri ekrana basma</h1></marquee>
+    <div style="background-color:#ffd800">
+        @for (int i = 0; i < 10; i++)
+        {
+            @i
+            <br />
+        }
+    </div>
+    <br /><br />
+          <div style="background-color:#4cff00">
+              @{
+                  var liste = new List<string>() { "Ankara", "Bursa", "İzmir" }; 
+                  var b = 0;
+                  foreach (var li in liste)
+                  {
+                      @b @li <br />;
+                      b++;
+                  }
+              }
+          </div>
+</body>
+</html>
