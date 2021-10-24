@@ -1,0 +1,34 @@
+﻿@model List<KitaplikProjesi_v1._1._2.Models.Personel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelD</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.Sehir</td>
+            <td>@x.Birim.BirimAd </td>
+            <td><a href="/depart/DepartmanSil/@x.PersonelD" class="btn btn-danger">Sil</a></td>
+            <td><a href="/depart/DepartmanGetir/@x.PersonelD" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personelim/YeniPersonel/" class="btn btn-primary">Yeni Personel</a>
+
